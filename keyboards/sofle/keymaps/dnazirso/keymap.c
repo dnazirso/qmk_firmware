@@ -49,11 +49,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ,-----------------------------------------.                     ,-----------------------------------------.
      * | Esc  |   À  |   È  |   É  |   @  |   ù  |                     |   £  |   $  |   €  |   ²  |   °  |      |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * | Tab  |   ^  |   <  |   >  |   (  |   )  |                     |   /  |   \  |   |  |   _  |      |      |
+     * | Tab  |   <  |   >  |   (  |   )  |      |                     |      |   /  |   \  |   |  |   _  |      |
      * |------+------+------+------+------+------|                     |------+------+------+------+------+------|
-     * | Caps |   ¨  |   [  |   ]  |   {  |   }  |-------.     ,-------|   *  |   =  |   +  |   -  |      |      |
+     * | Caps |   [  |   ]  |   {  |   }  |      |-------.     ,-------|      |   +  |   -  |   *  |   =  |      |
      * |------+------+------+------+------+------|       |     |       |------+------+------+------+------+------|
-     * | Shift|   ·  |      |   '  |   `  |   "  |-------|     |-------|   #  |   ?  |   .  |      |   ¤  | Shift|
+     * | Shift|   ·  |   `  |   '  |   "  |      |-------|     |-------|      |   ?  |   .  |   #  |   ¤  | Shift|
      * `-----------------------------------------/       /      \      \-----------------------------------------'
      *            | LGUI | LAlt | LCTR |LOWER | /Enter  /        \Space \  |RAISE | RCTR | RAlt | HYPER|
      *            |      |      |      |      |/       /          \      \ |      |      |      |      |
@@ -62,9 +62,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_LOWER] = LAYOUT(
         /**/ _______, CL_AGRV, CL_EGRV, CL_EACU, ALGR(KC_0), KC_QUOTE, /*                                               */ S(KC_RBRC), KC_RBRC, ALGR(KC_E), KC_GRV, S(KC_MINS), _______,     //
-        /**/ _______, KC_LBRC, KC_NUBS, S(KC_NUBS), KC_5, KC_MINS, /*                                                   */ S(KC_DOT), ALGR(KC_8), ALGR(KC_6), KC_8, _______, _______,        //
-        /**/ KC_CAPS, S(KC_LBRC), ALGR(KC_5), ALGR(KC_MINS), ALGR(KC_4), ALGR(KC_EQL), /*                               */ KC_NUHS, KC_EQL, S(KC_EQL), KC_6, _______, _______,               //
-        /**/ KC_LSFT, ALGR(KC_COMM), _______, KC_4, ALGR(KC_7), KC_3, _______, /*                              */ _______, ALGR(KC_3), S(KC_M), S(KC_COMM), _______, ALGR(KC_RBRC), KC_RSFT, //
+        /**/ _______, KC_NUBS, S(KC_NUBS), KC_5, KC_MINS, _______, /*                                                   */ _______, S(KC_DOT), ALGR(KC_8), ALGR(KC_6), KC_8, _______,        //
+        /**/ KC_CAPS, ALGR(KC_5), ALGR(KC_MINS), ALGR(KC_4), ALGR(KC_EQL), _______, /*                                  */ _______, S(KC_EQL), KC_6, KC_NUHS, KC_EQL, _______,               //
+        /**/ KC_LSFT, ALGR(KC_COMM), KC_4, ALGR(KC_7), KC_3, _______, _______, /*                              */ _______, _______, S(KC_M), S(KC_COMM), ALGR(KC_3), ALGR(KC_RBRC), KC_RSFT, //
         /*                  */ KC_LGUI, KC_LALT, KC_LCTL, XXXXXXX, _______, /*                                 */ _______, MO(_ADJUST), KC_RCTL, KC_RALT, KC_RGUI                            //
         ),
 
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
      * | Tab  | Ins  | Pscr | Menu |      |      |                    | PgUp |      |  Up  |      |      | F12  |
      * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
-     * |      | LAt  | LCtl |LShift|      |      |-------.    ,-------|PgDown| Left | Down | Rigth|  Del |      |
+     * |      |      |      |      |      |      |-------.    ,-------|PgDown| Left | Down | Rigth|  Del |      |
      * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
      * |Shift | Undo |  Cut | Copy | Paste|      |-------|    |-------|      |      |      |      |      | Shift|
      * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_RAISE] = LAYOUT(
         /**/ _______, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, /*                                         */ KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,            //
         /**/ _______, KC_INS, KC_PSCR, KC_APP, XXXXXXX, XXXXXXX, /*                                 */ KC_PGUP, XXXXXXX, KC_UP, XXXXXXX, XXXXXXX, KC_F12,     //
-        /**/ _______, KC_LALT, KC_LCTL, KC_LSFT, XXXXXXX, XXXXXXX, /*                               */ KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_DEL, _______,   //
+        /**/ _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, /*                               */ KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT, KC_DEL, _______,   //
         /**/ _______, KC_UNDO, KC_CUT, KC_COPY, KC_PASTE, XXXXXXX, _______, /*              */ _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, //
         /*              */ KC_LGUI, KC_LALT, KC_LCTL, MO(_ADJUST), KC_SPC, /*               */ KC_ENT, XXXXXXX, KC_RCTL, KC_RALT, KC_RGUI                     //
         ),
